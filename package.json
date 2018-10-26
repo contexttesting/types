@@ -18,7 +18,8 @@
     "example/": "yarn e example/example.js"
   },
   "files": [
-    "types"
+    "types",
+    "index.js"
   ],
   "repository": {
     "type": "git",

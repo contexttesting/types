@@ -1,8 +1,8 @@
 # @zoroaster/types
 
-[![npm version](https://badge.fury.io/js/@zoroaster/types.svg)](https://npmjs.org/package/@zoroaster/types)
+[![npm version](https://badge.fury.io/js/%40zoroaster%2Ftypes.svg)](https://npmjs.org/package/@zoroaster/types)
 
-`@zoroaster/types` is The types in context testing.
+`@zoroaster/types` is the types in context testing.
 
 ```sh
 yarn add -E @zoroaster/types
@@ -12,47 +12,33 @@ yarn add -E @zoroaster/types
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`types(arg1: string, arg2?: boolean)`](#mynewpackagearg1-stringarg2-boolean-void)
-  * [`Config`](#type-config)
+  * [`Context`](#type-context)
+  * [`ContextConstructor`](#type-contextconstructor)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
 
 ## API
 
-The package is available by importing its default function:
+The package is available by importing its types via the `@typedef`:
 
 ```js
-import types from '@zoroaster/types'
+/**
+ * @typedef {import('@zoroaster/types').ContextConstructor} ContextConstructor
+ * @typedef {import('@zoroaster/types').Context} Context
+ */
 ```
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
-## `types(`<br/>&nbsp;&nbsp;`arg1: string,`<br/>&nbsp;&nbsp;`arg2?: boolean,`<br/>`): void`
+__<a name="type-context">`Context`</a>__: A context made with a constructor.
 
-Call this function to get the result you want.
+|   Name   |      Type       |              Description              |
+| -------- | --------------- | ------------------------------------- |
+| _init    | _() =&gt; void_ | A function to initialise the context. |
+| _destroy | _() =&gt; void_ | A function to destroy the context.    |
 
-__<a name="type-config">`Config`</a>__: Options for the program.
-
-|   Name    |   Type    |    Description    | Default |
-| --------- | --------- | ----------------- | ------- |
-| shouldRun | _boolean_ | A boolean option. | `true`  |
-| __text*__ | _string_  | A text to return. | -       |
-
-```js
-/* yarn example/ */
-import types from '@zoroaster/types'
-
-(async () => {
-  const res = await types({
-    text: 'example',
-  })
-  console.log(res)
-})()
-```
-```
-example
-```
+`{new(...args: any[]): Context}` __<a name="type-contextconstructor">`ContextConstructor`</a>__: A function or class or object that makes a context
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
 

@@ -1,25 +1,16 @@
 ## API
 
-The package is available by importing its default function:
+The package is available by importing its types via the `@typedef`:
 
 ```js
-import types from '@zoroaster/types'
+/**
+ * @typedef {import('@zoroaster/types').ContextConstructor} ContextConstructor
+ * @typedef {import('@zoroaster/types').Context} Context
+ */
 ```
 
 %~%
 
-```## types
-[
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
-]
-```
-
-Call this function to get the result you want.
-
-%TYPEDEF types/index.xml%
-
-%EXAMPLE: example/example.js, ../src => @zoroaster/types%
-%FORK example example/example%
+%TYPEDEF types/context.xml%
 
 %~%

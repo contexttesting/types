@@ -2,10 +2,10 @@
   <type type="function(new: _contextTesting.Context)" name="ContextConstructor" desc="The constructor class of a context." />
   <type name="Context" desc="The context made with a constructor, or an object.">
     <prop opt name="_init" type="function(): !Promise|void">
-      The function to initialise the context before the test.
+      The function to initialise the context before each test.
     </prop>
     <prop opt name="_destroy" type="function(): !Promise|void">
-      The function to destroy the context after the test is run.
+      The function to destroy the context after its test is run.
     </prop>
   </type>
 

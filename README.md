@@ -36,8 +36,8 @@ __<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The con
 
 |   Name   |                  Type                   |                        Description                         |
 | -------- | --------------------------------------- | ---------------------------------------------------------- |
-| _init    | <em>function(): (!Promise \| void)</em> | The function to initialise the context before the test.    |
-| _destroy | <em>function(): (!Promise \| void)</em> | The function to destroy the context after the test is run. |
+| _init    | <em>function(): (!Promise \| void)</em> | The function to initialise the context before each test.   |
+| _destroy | <em>function(): (!Promise \| void)</em> | The function to destroy the context after its test is run. |
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 

@@ -12,8 +12,8 @@ yarn add -D @zoroaster/types
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-  * [`_contextTesting.Context`](#type-_contexttestingcontext)
   * [`_contextTesting.ContextConstructor`](#type-_contexttestingcontextconstructor)
+  * [`_contextTesting.Context`](#type-_contexttestingcontext)
 - [Example](#example)
 - [Copyright](#copyright)
 
@@ -30,14 +30,14 @@ The package is available by importing its types via the `@typedef`:
  */
 ```
 
+`function(new: _contextTesting.Context)` __<a name="type-_contexttestingcontextconstructor">`_contextTesting.ContextConstructor`</a>__: The constructor class of a context.
+
 __<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The context made with a constructor, or an object.
 
 |   Name   |                  Type                   |                        Description                         |
 | -------- | --------------------------------------- | ---------------------------------------------------------- |
 | _init    | <em>function(): (!Promise \| void)</em> | The function to initialise the context before the test.    |
 | _destroy | <em>function(): (!Promise \| void)</em> | The function to destroy the context after the test is run. |
-
-`function(new: _contextTesting.Context)` __<a name="type-_contexttestingcontextconstructor">`_contextTesting.ContextConstructor`</a>__: The constructor class of a context.
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 

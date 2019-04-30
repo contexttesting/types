@@ -1,10 +1,12 @@
-<types>
-  <type name="Config" desc="Options for the program.">
-    <prop boolean name="shouldRun" default="true">
-      A boolean option.
+<types namespace="_contextTesting">
+  <type name="Context" desc="The context made with a constructor, or an object.">
+    <prop opt name="_init" type="function(): !Promise|void">
+      The function to initialise the context before the test.
     </prop>
-    <prop string name="text">
-      A text to return.
+    <prop opt name="_destroy" type="function(): !Promise|void">
+      The function to destroy the context after the test is run.
     </prop>
+  </type>
+  <type type="function(new: _contextTesting.Context)" name="ContextConstructor" desc="The constructor class of a context.">
   </type>
 </types>

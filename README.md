@@ -5,15 +5,15 @@
 `@zoroaster/types` is the types in context testing.
 
 ```sh
-yarn add -E @zoroaster/types
+yarn add -D @zoroaster/types
 ```
 
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-  * [`Context`](#type-context)
-  * [`ContextConstructor`](#type-contextconstructor)
+  * [`_contextTesting.Context`](#type-_contexttestingcontext)
+  * [`_contextTesting.ContextConstructor`](#type-_contexttestingcontextconstructor)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -31,21 +31,21 @@ The package is available by importing its types via the `@typedef`:
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
-__<a name="type-context">`Context`</a>__: A context made with a constructor.
+__<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The context made with a constructor, or an object.
 
-|   Name   |      Type       |              Description              |
-| -------- | --------------- | ------------------------------------- |
-| _init    | _() =&gt; void_ | A function to initialise the context. |
-| _destroy | _() =&gt; void_ | A function to destroy the context.    |
+|   Name   |                  Type                   |                        Description                         |
+| -------- | --------------------------------------- | ---------------------------------------------------------- |
+| _init    | <em>function(): (!Promise \| void)</em> | The function to initialise the context before the test.    |
+| _destroy | <em>function(): (!Promise \| void)</em> | The function to destroy the context after the test is run. |
 
-`{new(...args: any[]): Context}` __<a name="type-contextconstructor">`ContextConstructor`</a>__: A function or class or object that makes a context
+`function(new: _contextTesting.Context)` __<a name="type-_contexttestingcontextconstructor">`_contextTesting.ContextConstructor`</a>__: The constructor class of a context.
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
 
 ## Copyright
 
-(c) [Context Testing][1] 2018
 
-[1]: https://contexttesting.com
+  (c) [Context Testing](https://contexttesting.com) 2019
+
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/-1.svg?sanitize=true"></a></p>

@@ -11,6 +11,6 @@ The package is available by importing its types via the `@typedef`:
 
 %~%
 
-%TYPEDEF types/context.xml%
+%TYPEDEF types/index.xml%
 
 %~%

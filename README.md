@@ -14,6 +14,7 @@ yarn add -D @zoroaster/types
 - [API](#api)
   * [`_contextTesting.Context`](#type-_contexttestingcontext)
   * [`_contextTesting.ContextConstructor`](#type-_contexttestingcontextconstructor)
+- [Example](#example)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -37,6 +38,10 @@ __<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The con
 | _destroy | <em>function(): (!Promise \| void)</em> | The function to destroy the context after the test is run. |
 
 `function(new: _contextTesting.Context)` __<a name="type-_contexttestingcontextconstructor">`_contextTesting.ContextConstructor`</a>__: The constructor class of a context.
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
+
+## Example
 
 ```js
 import { join } from 'path'
@@ -71,7 +76,7 @@ export default class Context {
 }
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
 
 ## Copyright
 

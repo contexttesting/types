@@ -9,8 +9,8 @@ The package is available by importing its types via the `@typedef`:
  */
 ```
 
-%~%
-
 %TYPEDEF types/index.xml%
+
+%EXAMPLE: test/context%
 
 %~%

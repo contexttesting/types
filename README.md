@@ -29,8 +29,6 @@ The package is available by importing its types via the `@typedef`:
  */
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
-
 __<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The context made with a constructor, or an object.
 
 |   Name   |                  Type                   |                        Description                         |
@@ -40,7 +38,40 @@ __<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The con
 
 `function(new: _contextTesting.Context)` __<a name="type-_contexttestingcontextconstructor">`_contextTesting.ContextConstructor`</a>__: The constructor class of a context.
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
+```js
+import { join } from 'path'
+import { debuglog } from 'util'
+
+const LOG = debuglog('@zoroaster/types')
+
+const FIXTURE = 'test/fixture'
+
+/**
+ * A testing context for the package.
+ */
+export default class Context {
+  async _init() {
+    LOG('init context')
+  }
+  /**
+   * Example method.
+   */
+  example() {
+    return 'OK'
+  }
+  /**
+   * Path to the fixture file.
+   */
+  get FIXTURE() {
+    return join(FIXTURE, 'test.txt')
+  }
+  async _destroy() {
+    LOG('destroy context')
+  }
+}
+```
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
 ## Copyright
 

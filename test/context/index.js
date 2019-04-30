@@ -1,9 +1,9 @@
-import { resolve } from 'path'
+import { join } from 'path'
 import { debuglog } from 'util'
 
 const LOG = debuglog('@zoroaster/types')
 
-const FIXTURE = resolve(__dirname, '../fixture')
+const FIXTURE = 'test/fixture'
 
 /**
  * A testing context for the package.
@@ -22,10 +22,7 @@ export default class Context {
    * Path to the fixture file.
    */
   get FIXTURE() {
-    return resolve(FIXTURE, 'test.txt')
-  }
-  get SNAPSHOT_DIR() {
-    return resolve(__dirname, '../snapshot')
+    return join(FIXTURE, 'test.txt')
   }
   async _destroy() {
     LOG('destroy context')

@@ -16,10 +16,6 @@ yarn add -D @zoroaster/types
   * [`_contextTesting.ContextConstructor`](#type-_contexttestingcontextconstructor)
   * [`_contextTesting.Context`](#type-_contexttestingcontext)
   * [Context Example](#context-example)
-- [Context](#context)
-  * [`_contextTesting.ContextConstructor`](#type-_contexttestingcontextconstructor)
-  * [`_contextTesting.Context`](#type-_contexttestingcontext)
-  * [Context Example](#context-example)
 - [Test Suite & Test](#test-suite--test)
   * [`_contextTesting.TestSuite`](#type-_contexttestingtestsuite)
   * [`_contextTesting.Test`](#type-_contexttestingtest)
@@ -43,6 +39,8 @@ The package can enable _VSCode_ types highlighting by importing its types via th
 
 The types and [externs](externs.js) for _Google Closure Compiler_ via [**_Depack_**](https://github.com/dpck/depack) are defined in the `_contextTesting` namespace.
 
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
+
 ## Context
 
 The `context` is the property on test suites which contains either an object, or Context Constructors -- classes used to create a new context for tests.
@@ -56,7 +54,7 @@ __<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The con
 | _init    | <em>function(): (!Promise \| void)</em> | The function to initialise the context before each test.   |
 | _destroy | <em>function(): (!Promise \| void)</em> | The function to destroy the context after its test is run. |
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true" width="25"></a></p>
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true" width="25"></a></p>
 
 ### Context Example
 
@@ -119,85 +117,7 @@ const T = {
 export default T
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
-
-## Context
-
-The `context` is the property on test suites which contains either an object, or Context Constructors -- classes used to create a new context for tests.
-
-`function(new: _contextTesting.Context)` __<a name="type-_contexttestingcontextconstructor">`_contextTesting.ContextConstructor`</a>__: The constructor class of a context.
-
-__<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The context made with a constructor.
-
-|   Name   |                  Type                   |                        Description                         |
-| -------- | --------------------------------------- | ---------------------------------------------------------- |
-| _init    | <em>function(): (!Promise \| void)</em> | The function to initialise the context before each test.   |
-| _destroy | <em>function(): (!Promise \| void)</em> | The function to destroy the context after its test is run. |
-
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true" width="25"></a></p>
-
-### Context Example
-
-The context is used to put all service methods for test cases into a single class, and access them via tests' arguments.
-
-```js
-import { join } from 'path'
-import { debuglog } from 'util'
-
-const LOG = debuglog('@zoroaster/types')
-
-const FIXTURE = 'test/fixture'
-
-/**
- * A testing context for the package.
- */
-export default class Context {
-  async _init() {
-    LOG('init context')
-  }
-  /**
-   * Example method.
-   */
-  example() {
-    return 'OK'
-  }
-  /**
-   * Path to the fixture file.
-   */
-  get FIXTURE() {
-    return join(FIXTURE, 'test.txt')
-  }
-  async _destroy() {
-    LOG('destroy context')
-  }
-}
-```
-```js
-import { equal, ok } from 'zoroaster/assert'
-import Context from '../context'
-import types from '../../src'
-
-/** @type {Object.<string, (c: Context)>} */
-const T = {
-  context: Context,
-  'is a function'() {
-    equal(typeof types, 'function')
-  },
-  async 'calls package without error'() {
-    await types()
-  },
-  async 'gets a link to the fixture'({ FIXTURE }) {
-    const res = await types({
-      text: FIXTURE,
-    })
-    ok(res, FIXTURE)
-  },
-}
-
-export default T
-```
-
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/4.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true"></a></p>
 
 ## Test Suite & Test
 
@@ -244,7 +164,7 @@ __<a name="type-_contexttestingtest">`_contextTesting.Test`</a>__: The test inte
 | __fn*__        | <em>function(...<a href="#type-_contexttestingcontext" title="The context made with a constructor.">_contextTesting.Context</a>): (!Promise \| void)</em> | The test function to run.        |
 | __isFocused*__ | <em>boolean</em>                                                                                                                                          | If the name of the test has `!`. |
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/5.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/4.svg?sanitize=true"></a></p>
 
 ## Copyright
 

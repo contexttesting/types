@@ -60,6 +60,10 @@ __<a name="type-_contexttestingcontext">`_contextTesting.Context`</a>__: The con
 
 The context is used to put all service methods for test cases into a single class, and access them via tests' arguments.
 
+<table>
+<tr><th>Context</th><th>Spec</th></tr>
+<tr><td>
+
 ```js
 import { join } from 'path'
 import { debuglog } from 'util'
@@ -92,6 +96,8 @@ export default class Context {
   }
 }
 ```
+</td><td>
+
 ```js
 import { equal, ok } from 'zoroaster/assert'
 import Context from '../context'
@@ -116,6 +122,8 @@ const T = {
 
 export default T
 ```
+</td></tr>
+</table>
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true"></a></p>
 
@@ -131,6 +139,16 @@ _@Zoroaster/types_ package also provides interfaces for the test and test suite 
  */
 export default class TestSuite {
   /* ... */
+  /**
+   * Whether test suite has focused tests.
+   */
+  get hasFocused(){
+    // this.names is a nested collection of inner test and test suite names.
+    return this.names.some(n => n.startsWith('!'))
+  }
+  get isFocused() {
+    return this.name.startsWith('!')
+  }
 }
 ```
 
@@ -139,11 +157,19 @@ export default class TestSuite {
 /**
  * Run all tests in sequence, one by one.
  * This also runs only selected tests, e.g., !test and !test suite
- * @param {!Array<!(_contextTesting.Test|_contextTesting.TestSuite)>} tests An array with tests to reduce.
+ * @param {!Array<!(_contextTesting.Test|_contextTesting.TestSuite)>} tests An array with tests.
  * @param {_contextTesting.ReducerConfig} config The options for the reducer.
  */
 const reducer = async (tests, config) => {
-  /* ... */
+  await tests.reduce(async (acc, test) => {
+    const {
+      name, isFocused, fn, hasFocused, // accessing the interface API
+    } = test
+    const isTest = !!fn
+    if (allCanRun || isFocused || hasFocused) {
+      /* ... */
+    }
+  }
 }
 ```
 

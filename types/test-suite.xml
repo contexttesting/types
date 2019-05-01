@@ -1,0 +1,27 @@
+<types namespace="_contextTesting">
+  <type record name="TestSuite" desc="The test suite interface.">
+    <prop string name="name">
+      The name of the test suite.
+    </prop>
+    <prop boolean name="isFocused">
+      If the test suite is focused.
+    </prop>
+    <prop boolean name="hasFocused">
+      Whether the test suite has focused tests.
+    </prop>
+    <prop type="!Array<!(_contextTesting.Test|_contextTesting.TestSuite)>" name="tests">
+      Whether the test suite has focused tests.
+    </prop>
+  </type>
+  <type record name="Test" desc="The test interface required for the reducer.">
+    <prop string name="name">
+      The name of the test.
+    </prop>
+    <prop type="function(..._contextTesting.Context): !Promise|void" name="fn">
+      The test function to run.
+    </prop>
+    <prop boolean name="isFocused">
+      If the name of the test has `!`.
+    </prop>
+  </type>
+</types>

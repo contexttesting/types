@@ -1,20 +1,17 @@
 ## API
 
-The package is available by importing its types via the `@typedef`:
+The package can enable _VSCode_ types highlighting by importing its types via the `@typedef`:
 
 ```js
 /**
- * @typedef {import('@zoroaster/types').ContextConstructor} ContextConstructor
- * @typedef {import('@zoroaster/types').Context} Context
+ * @suppress {nonStandardJsDocs}
+ * @typedef {import('@zoroaster/types').Test} _contextTesting.ContextConstructor
+ * @typedef {import('@zoroaster/types').TestSuite} _contextTesting.TestSuite
+ * @typedef {import('@zoroaster/types').ContextConstructor} _contextTesting.ContextConstructor
+ * @typedef {import('@zoroaster/types').Context} _contextTesting.Context
  */
 ```
 
-%TYPEDEF types/index.xml%
-
-%~%
-
-## Example
-
-%EXAMPLE: test/context%
+<Externs namespace="_contextTesting" />
 
 %~%

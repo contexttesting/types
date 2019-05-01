@@ -1,6 +1,6 @@
 {
   "name": "@zoroaster/types",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "The types in context testing.",
   "main": "types/index.js",
   "module": "types/index.js",
